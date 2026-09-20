@@ -1,0 +1,2 @@
+# Source exports
+[ -f "$HOME/.bash.d/bash/exports" ] && . "$HOME/.bash.d/bash/exports"
