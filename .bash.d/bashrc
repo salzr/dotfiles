@@ -1,2 +1,5 @@
 # Source exports
 [ -f "$HOME/.bash.d/bash/exports" ] && . "$HOME/.bash.d/bash/exports"
+
+# Source funcs
+[ -f "$HOME/.bash.d/bash/funcs" ] && . "$HOME/.bash.d/bash/funcs"
