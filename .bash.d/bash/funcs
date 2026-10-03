@@ -52,3 +52,18 @@ function proml {
   PS4='+ '
 }
 proml
+
+WORKSPACE_DIR="${WORKSPACE_DIR:-${HOME}/workspace}"
+
+function cdworkspace {
+  cd "${WORKSPACE_DIR}/$1"
+}
+
+function _cdworkspace {
+  local cur
+  cur="${COMP_WORDS[COMP_CWORD]}"
+
+  COMPREPLY=( $(cd "${WORKSPACE_DIR}" 2>/dev/null && compgen -d -S/ -- "$cur") )
+}
+
+complete -o filenames -o nospace -F _cdworkspace cdworkspace
